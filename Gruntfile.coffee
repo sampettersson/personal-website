@@ -22,7 +22,7 @@ module.exports = (grunt) ->
 					{
 						expand: true
 						cwd: "src/"
-						src: ["assets/**/*", "**/*.hbs", "**/*.html"]
+						src: ["client/assets/**/*", "!client/assets/**/*.sass", "!client/assets/**/*.scss", "**/*.hbs", "**/*.html"]
 						dest: "dist/"
 					}
 				]
@@ -62,7 +62,7 @@ module.exports = (grunt) ->
 	          copy: true
 	          cleanBowerDir: true
 	          cleanTargetDir: true
-	          targetDir: "dist/vendor/components"
+	          targetDir: "dist/client/vendor/components"
 	          bowerOptions:
 	            production: false
 		browserify:

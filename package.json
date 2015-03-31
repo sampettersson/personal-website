@@ -1,5 +1,5 @@
 {
-  "name": "nbg-template",
+  "name": "sampettersson.com",
   "version": "1.0.0",
   "description": "",
   "main": "web.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sampettersson/nbga-template.git"
+    "url": "https://github.com/sampettersson/sampettersson.com.git"
   },
   "author": "Sam Pettersson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sampettersson/nbga-template/issues"
+    "url": "https://github.com/sampettersson/sampettersson.com/issues"
   },
-  "homepage": "https://github.com/sampettersson/nbga-template",
+  "homepage": "https://www.sampettersson.com",
   "dependencies": {
     "browserify": "^9.0.3",
     "express": "^4.11.2",
@@ -39,11 +39,16 @@
     "grunt-shell": "^1.1.1"
   },
   "browser": {
-    "angular": "./dist/vendor/components/angular/angular.js",
-    "angular-route": "./dist/vendor/components/angular-route/angular-route.js"
+    "angular": "./dist/client/vendor/components/angular/angular.js",
+    "angular-route": "./dist/client/vendor/components/angular-route/angular-route.js",
+    "document-register-element": "./dist/client/vendor/components/document-register-element/document-register-element.js",
+    "skrollr": "./dist/client/vendor/components/skrollr/skrollr.js",
+    "angular-skrollr": "./dist/client/vendor/components/angular-skrollr/angular-skrollr.js"
   },
   "browserify-shim": {
-    "angular": "Angular"
+    "skrollr": {
+      "exports": "skrollr"
+    }
   },
   "browserify": {
     "transform": [

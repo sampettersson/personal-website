@@ -1,15 +1,15 @@
-<html ng-app="nbg-template" ng-controller="applicationController">
+<html ng-app="sampettersson.com" ng-controller="applicationController">
 	<head>
 
 		<title>\{{ title }}</title>
 		<meta charset="utf-8" />
 
         <base href="/">
-		<script type="application/javascript" src="/client/build/app.js"></script>
-		<link rel="stylesheet" href="/client/stylesheets/app.css" />
+		<link rel="stylesheet" href="/client/assets/app.css" />
 
 	</head>
     <body>
-        <application ng-include="'/client/views/applicationView.html'" class="nbg-template"></application>
+        <application-root ng-include="'/client/views/applicationView.html'" class="application"></application-root>
+        <script type="application/javascript" src="/client/build/app.js"></script>
     </body>
 </html>

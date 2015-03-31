@@ -8,7 +8,6 @@ exphbs  = require "express-handlebars"
 
 app = express()
 
-app.use express.static __dirname.concat("/../assets")
 app.use "/client", express.static __dirname.concat("/../client")
 
 app.engine ".hbs", exphbs extname: ".hbs"

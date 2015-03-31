@@ -1,0 +1,81 @@
+@import 'fonts/stylesheet'
+
+*
+  margin: 0
+  padding: 0
+  -webkit-font-smoothing: antialiased
+  text-rendering: geometricPrecision
+  box-sizing: border-box
+
+body
+  height: 100%
+  background: #FFFEFC
+  font-family: geometriabold, sans-serif
+
+application-root
+  width: 100%
+
+section.hero
+  display: flex
+  align-items: center
+  width: 80%
+  margin: 0 auto
+  height: 100%
+
+  .branding
+    display: flex
+    justify-content: center
+    flex: 0 0 25%
+    height: 100%
+
+    img
+      width: 100%
+      max-width: 100px
+
+  .intro
+    flex: 0 0 75%
+    max-width: 600px
+
+    *
+      font-family: ostrich_sans_roundedmedium, sans-serif
+      background: linear-gradient(130deg, #8CBEB0, #B8D27A)
+      background-size: cover
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+
+    h2
+      padding-top: 5px
+      font-size: 8em
+      letter-spacing: 5px
+      background-size: 40%
+
+    h3
+      padding-top: 5px
+      padding-bottom: 15px
+      font-size: 6.6em
+      background-size: 40%
+
+    .wave
+      width: 100%
+      height: 2px
+      background: linear-gradient(130deg, #8CBEB0, #B8D27A)
+      display: block
+
+    p
+      padding-top: 15px
+      padding-bottom: 15px
+      font-size: 3em
+      line-height: 105%
+
+section.portfolio
+  flex: 1
+  min-height: 100%
+  background: linear-gradient(130deg, #8CBEB0, #B8D27A)
+
+  ul
+    list-style-type: none
+
+    li
+      height: 100%
+      width: 100%
+      background: #A2D2C1

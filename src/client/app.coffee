@@ -1,7 +1,24 @@
+require "document-register-element"
+
+# Register custom elements
+document.registerElement "application-root"
+document.registerElement "application-view"
+document.registerElement "application-page"
+
 require "angular"
 require "angular-route"
+require "angular-skrollr"
 
-App = angular.module 'nbg-template', ["ngRoute"]
+App = angular.module 'sampettersson.com', ["ngRoute", "sn.skrollr"]
+
+App.config (snSkrollrProvider) ->
+  snSkrollrProvider.config =
+    forceHeight: false
+    smoothScrolling: true
+
+App.run ["snSkrollr", (snSkrollr) ->
+  snSkrollr.init();
+]
 
 App.run ['$route', angular.noop]
 
