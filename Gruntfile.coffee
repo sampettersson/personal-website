@@ -25,6 +25,17 @@ module.exports = (grunt) ->
 						src: ["client/assets/**/*", "!client/assets/**/*.sass", "!client/assets/**/*.scss", "**/*.hbs", "**/*.html"]
 						dest: "dist/"
 					}
+					{
+						expand: true,
+						dot: true,
+						cwd: 'dist',
+						dest: 'dist/',
+						src: [ '**/vendor/**/*.css'],
+						rename: (dest, src) ->
+							path = require "path"
+							basename = path.basename(src)
+							return dest + src.replace(basename, "_" + basename).replace('.css','.scss')
+					}
 				]
 		sass:
 			dist:
@@ -43,7 +54,7 @@ module.exports = (grunt) ->
 			sass:
 				expand: true
 				flatten: false
-				src: "dist/**/*.css"
+				src: ["dist/**/*.css", "!dist/**/vendor/**/*.css"]
 		cssmin:
 			sass:
 				files: [
@@ -104,7 +115,7 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-foreman'
 	grunt.loadNpmTasks 'grunt-ng-annotate'
 
-	grunt.registerTask 'initialize', ["clean:dist", "coffee", "copy", "bower", "ngAnnotate", "browserify", "uglify", "sass", "clean:sass", "autoprefixer", "cssmin"]
+	grunt.registerTask 'initialize', ["clean:dist", "coffee", "bower", "copy", "ngAnnotate", "browserify", "uglify", "sass", "clean:sass", "autoprefixer", "cssmin"]
 	grunt.registerTask 'update', ["coffee", "copy", "ngAnnotate", "browserify", "sass", "clean:sass", "autoprefixer"]
 
 	grunt.registerTask 'serve', ["update", "foreman"]

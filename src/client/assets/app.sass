@@ -1,4 +1,5 @@
 @import 'fonts/stylesheet'
+@import "fonts/font-awesome/font-awesome"
 
 *
   margin: 0
@@ -75,7 +76,7 @@ section.hero
 section.portfolio
   flex: 1
   min-height: 100%
-  background: #4A4A4A
+  background: #76837B
 
   ul
     list-style-type: none
@@ -88,7 +89,14 @@ section.portfolio
       width: 100%
 
       &.berdie
-        background: #1AD6FD
+        $berdie: #1AD6FD
+        background: $berdie
+
+        .container
+          .meta
+            button
+              &:hover
+                color: $berdie
 
       &.something
         background: #333333
@@ -117,5 +125,22 @@ section.portfolio
 
           p
             padding-top: 10px
-            padding-bottom: 15px
+            padding-bottom: 20px
             color: #ffffff
+
+          button
+            background: 0
+            color: #ffffff
+            font-size: 1em
+            padding: 15px
+            padding-top: 18px
+            border: 1px solid #ffffff
+            border-radius: 5px
+            text-transform: uppercase
+            outline: 0
+            font-family: geometrialight, sans-serif
+            transition: all 200ms
+
+            &:hover
+              background: #ffffff
+              color: #333333
