@@ -41,6 +41,7 @@ module.exports = (grunt) ->
 			dist:
 				options:
 					sourcemap: "none"
+					loadPath: ["src/client/assets/", "dist/client/vendor/components/"]
 				files: [
 					{
 						expand: true
@@ -57,6 +58,8 @@ module.exports = (grunt) ->
 				src: ["dist/**/*.css", "!dist/**/vendor/**/*.css"]
 		cssmin:
 			sass:
+				options:
+					keepSpecialComments: 0
 				files: [
 					expand: true
 					cwd: "dist"
@@ -64,7 +67,7 @@ module.exports = (grunt) ->
 					dest: "dist"
 				]
 		clean:
-			dist: ["dist/"]
+			dist: ["dist"]
 			sass: [".sass-cache"]
 		bower:
 	      install:
