@@ -37,6 +37,8 @@ body
 
     z-index: 4
 
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.2)
+
     a
       display: inline-block
 
@@ -48,6 +50,15 @@ body
       color: $color
 
       text-decoration: none
+
+      transition: all 250ms
+
+      &:hover
+        background: $color
+
+        color: lighten($color, 100)
+
+        border: 2px solid lighten($color, 100)
 
 application-page
   display: block
@@ -424,7 +435,7 @@ application-page.striveforwardsView
 
       text-decoration: none
 
-      border-bottom: 1px solid $striveforwardsColor
+      border-bottom: 2px solid $striveforwardsColor
 
     a:last-child
       margin-left: 10px
