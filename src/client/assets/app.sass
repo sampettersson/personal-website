@@ -440,12 +440,12 @@ application-page.striveforwardsView
       margin-left: 10px
 
 application-page.berdieView
-  @include applicationPageHeader(#1AD6FD)
+  @include applicationPageHeader(darken($berdieColor, 10))
 
   section.portfolio-hero
     background: $berdieColor
 
-  .video
+  section.video
     position: relative
 
     height: 400px
@@ -467,7 +467,7 @@ application-page.berdieView
 
       background: rgba(0,0,0,0.3)
 
-      z-index: 4
+      z-index: 3
 
       .content
         max-width: 500px
@@ -489,3 +489,40 @@ application-page.berdieView
       min-height: 100%
       width: auto
       height: auto
+
+  section.about
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+    background: #ffffff
+
+    color: darken($berdieColor, 10)
+
+    .container
+      max-width: 600px
+
+      padding-top: 50px
+      padding-bottom: 50px
+
+      p
+        font-size: 1.5em
+
+        padding-bottom: 25px
+
+      a
+        display: inline-block
+
+        color: darken($berdieColor, 10)
+
+        text-decoration: none
+
+        font-size: 1.2em
+
+        border-bottom: 2px solid darken($berdieColor, 10)
+
+        text-transform: uppercase
+
+      a:last-child
+        margin-left: 15px
