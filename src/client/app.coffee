@@ -7,6 +7,7 @@ document.registerElement "application-page"
 
 require "angular"
 require "angular-route"
+require "skrollr"
 require "angular-skrollr"
 
 App = angular.module 'sampettersson.com', ["ngRoute", "sn.skrollr"]
@@ -26,13 +27,13 @@ App.config ($routeProvider, $locationProvider) ->
 
   $routeProvider.when '/',
     templateUrl: "/client/views/indexView.html"
-    controller: "indexController"
-  .when '/striveforwards',
-    templateUrl: "/client/views/striveforwardsView.html"
-    controller: "striveforwardsController"
+  .when '/projects/strive-forwards',
+    templateUrl: "/client/views/strive-forwardsView.html"
+  .when '/projects/berdie',
+    templateUrl: "/client/views/berdieView.html"
+    controller: "berdieController"
   .otherwise
     templateUrl: "/client/views/notFoundView.html"
-    controller: "notFoundController"
 
   $locationProvider.html5Mode true
 

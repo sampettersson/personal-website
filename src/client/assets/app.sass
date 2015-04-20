@@ -3,6 +3,7 @@
 @import "animate-css/animate"
 
 $striveforwardsColor: #A8254D
+$berdieColor: #1AD6FD
 
 *
   margin: 0
@@ -57,8 +58,6 @@ body
         background: $color
 
         color: lighten($color, 100)
-
-        border: 2px solid lighten($color, 100)
 
 application-page
   display: block
@@ -191,7 +190,7 @@ section.portfolio
                 &:hover
                   color: $color
 
-      @include portfolioColors(berdie, #1AD6FD)
+      @include portfolioColors(berdie, $berdieColor)
       @include portfolioColors(striveforwards, $striveforwardsColor)
 
       // Striveforwards specific styling.
@@ -439,3 +438,54 @@ application-page.striveforwardsView
 
     a:last-child
       margin-left: 10px
+
+application-page.berdieView
+  @include applicationPageHeader(#1AD6FD)
+
+  section.portfolio-hero
+    background: $berdieColor
+
+  .video
+    position: relative
+
+    height: 400px
+
+    overflow: hidden
+
+    .container
+      position: absolute
+
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+
+      color: #ffffff
+
+      width: 100%
+      height: 100%
+
+      background: rgba(0,0,0,0.3)
+
+      z-index: 4
+
+      .content
+        max-width: 500px
+
+        h1
+          text-transform: uppercase
+
+          font-size: 2.5em
+
+        p
+          padding-top: 25px
+
+          font-size: 1.5em
+
+    video
+      position: absolute
+
+      min-width: 100%
+      min-height: 100%
+      width: auto
+      height: auto

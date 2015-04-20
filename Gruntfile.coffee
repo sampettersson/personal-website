@@ -82,7 +82,7 @@ module.exports = (grunt) ->
 		browserify:
 			app:
 				files:
-					'dist/client/build/app.js': ["dist/client/**/*.js", "!dist/client/build/app.js"]
+					'dist/client/build/app.js': ["dist/client/**/*.js", "!dist/client/build/app.js", "!dist/client/vendor/**/*.js"]
 		foreman:
 			dev:
 				env: ["dev.env"]
