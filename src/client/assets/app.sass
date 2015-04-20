@@ -107,6 +107,8 @@ section.hero
   width: 80%
   height: 100%
 
+  min-height: 500px
+
   .branding
     display: flex
     justify-content: center
@@ -274,6 +276,10 @@ section.me
 
     padding-top: 35px
     padding-bottom: 35px
+
+    max-width: 80%
+
+    margin: 0 auto
 
     img
       width: 240px
@@ -526,3 +532,23 @@ application-page.berdieView
 
       a:last-child
         margin-left: 15px
+
+@media screen and (max-width: 1000px)
+
+  section.hero .branding
+    display: none
+
+  section.hero .intro
+    flex: 1
+
+  section.hero .intro p
+    font-size: 2.5em
+
+  section.portfolio ul li .container
+    flex-direction: column
+
+  section.portfolio ul li .container .meta
+    width: 100%
+
+  section.portfolio ul li .container .image
+    width: 80%
