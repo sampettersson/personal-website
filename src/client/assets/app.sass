@@ -2,6 +2,8 @@
 @import "fonts/font-awesome/font-awesome"
 @import "animate-css/animate"
 
+$striveforwardsColor: #A8254D
+
 *
   margin: 0
   padding: 0
@@ -12,17 +14,77 @@
   box-sizing: border-box
 
 body
+  font-family: geometriabold, sans-serif
+
   height: 100%
+
+@mixin applicationPageHeader($color)
+  header
+    position: fixed
+
+    top: 0
+    left: 0
+
+    width: 100%
+
+    padding: 25px
+    padding-top: 10px
+    padding-bottom: 10px
+
+    background: #ffffff
+
+    font-size: 1.3em
+
+    z-index: 4
+
+    a
+      display: inline-block
+
+      padding: 15px
+
+      border: 2px solid $color
+      border-radius: 5px
+
+      color: $color
+
+      text-decoration: none
+
+application-page
+  display: block
 
   background: linear-gradient(130deg, #8CBEB0, #B8D27A)
 
-  font-family: geometriabold, sans-serif
+  animation: fadeIn 250ms
+  animation-fill-mode: forwards
 
-application-root
-  width: 100%
+  @keyframes fadeIn
+    0%
+      opacity: 0
+    100%
+      opacity: 1
+
+  @include applicationPageHeader(#8CBEB0)
+
+application-page.notFoundView
+  .body
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+
+    height: 100%
+
+    color: #ffffff
+
+    h1
+      text-transform: uppercase
+
+      font-size: 2.5em
+
+      padding-bottom: 25px
 
 section.hero-container
-  background: url("images/bg.jpg")
+  background: #586154 url("images/bg.jpg")
   background-size: cover
   background-position: bottom center
 
@@ -66,15 +128,11 @@ section.hero
       font-size: 8em
       letter-spacing: 5px
 
-      background-size: 40%
-
     h3
       padding-top: 5px
       padding-bottom: 15px
 
       font-size: 6.6em
-
-      background-size: 40%
 
     .wave
       display: block
@@ -106,23 +164,27 @@ section.portfolio
 
       padding-top: 25px
       padding-bottom: 25px
+
       min-height: 100%
       width: 100%
 
-      &.berdie
-        $berdie: #1AD6FD
-        background: $berdie
+      // Handle colors for different portfolio
+      // items.
+      @mixin portfolioColors($class, $color)
+        &.#{$class}
+          background: $color
 
-        .container
-          .meta
-            button
-              &:hover
-                color: $berdie
+          .container
+            .meta
+              a
+                &:hover
+                  color: $color
 
+      @include portfolioColors(berdie, #1AD6FD)
+      @include portfolioColors(striveforwards, $striveforwardsColor)
+
+      // Striveforwards specific styling.
       &.striveforwards
-        $striveforwards: #A8254D
-        background: $striveforwards
-
         .container
           flex-direction: column
 
@@ -132,10 +194,7 @@ section.portfolio
             width: 100%
             max-width: 800px
 
-          .meta
-            button
-              &:hover
-                color: $striveforwards
+            padding-top: 30px
 
       .container
         display: flex
@@ -169,7 +228,9 @@ section.portfolio
 
             color: #ffffff
 
-          button
+          a
+            display: inline-block
+
             background: 0
             color: #ffffff
 
@@ -186,6 +247,8 @@ section.portfolio
             font-size: 1em
 
             transition: all 200ms
+
+            text-decoration: none
 
             &:hover
               background: #ffffff
@@ -238,3 +301,130 @@ section.me
           text-decoration: none
 
           border-bottom: 1px solid #ffffff
+
+application-page.portfolioView
+  section.portfolio-hero
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+    color: #ffffff
+
+    height: 600px
+
+    h1
+      font-size: 3em
+
+      padding-bottom: 25px
+
+      text-transform: uppercase
+
+    p
+      font-size: 2em
+
+      max-width: 400px
+
+      text-align: center
+
+    p.arrow
+      padding-top: 50px
+      font-size: 2.4em
+
+  section.contact
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+    color: #ffffff
+
+    min-height: 300px
+
+    padding-top: 25px
+    padding-bottom: 25px
+
+    .container
+      max-width: 600px
+
+      h1
+        font-size: 2.4em
+        text-transform: uppercase
+
+      p
+        font-size: 1.4em
+
+        a
+          color: #ffffff
+
+          border-bottom: 2px solid #ffffff
+
+          text-decoration: none
+
+application-page.striveforwardsView
+  @include applicationPageHeader($striveforwardsColor)
+
+  section.portfolio-hero
+    background: $striveforwardsColor
+    
+  section.divider
+    background: url("images/portfolio-details/striveforwards/hero@2x.jpg")
+    background-size: cover
+
+    height: 500px
+
+    width: 100%
+
+    position: absolute
+
+  section.about
+    background: #ffffff
+
+    color: $striveforwardsColor
+
+    padding-bottom: 25px
+
+    .content
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+
+      position: relative
+
+      padding-top: 150px
+      padding-bottom: 50px
+
+      z-index: 2
+
+    img
+      width: 70%
+
+      padding-bottom: 25px
+
+    h1
+      font-size: 2em
+
+      text-transform: uppercase
+
+    p
+      padding-top: 25px
+      padding-bottom: 25px
+
+      font-size: 1.5em
+
+      max-width: 600px
+
+    a
+      display: inline-block
+
+      font-size: 1.2em
+
+      color: $striveforwardsColor
+
+      text-decoration: none
+
+      border-bottom: 1px solid $striveforwardsColor
+
+    a:last-child
+      margin-left: 10px

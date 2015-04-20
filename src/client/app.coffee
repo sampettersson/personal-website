@@ -27,6 +27,9 @@ App.config ($routeProvider, $locationProvider) ->
   $routeProvider.when '/',
     templateUrl: "/client/views/indexView.html"
     controller: "indexController"
+  .when '/striveforwards',
+    templateUrl: "/client/views/striveforwardsView.html"
+    controller: "striveforwardsController"
   .otherwise
     templateUrl: "/client/views/notFoundView.html"
     controller: "notFoundController"
