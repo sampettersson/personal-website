@@ -19,6 +19,11 @@ body
 
   height: 100%
 
+body.mobile
+  min-height: 100%
+
+  -webkit-text-size-adjust: 100%
+
 @mixin applicationPageHeader($color)
   header
     position: fixed
@@ -356,6 +361,9 @@ application-page.portfolioView
     color: #ffffff
 
     min-height: 300px
+    max-width: 80%
+
+    margin: 0 auto
 
     padding-top: 25px
     padding-bottom: 25px
@@ -384,7 +392,7 @@ application-page.striveforwardsView
     background: $striveforwardsColor
     
   section.divider
-    background: url("images/portfolio-details/striveforwards/hero@2x.jpg")
+    background: url("images/portfolio-items/striveforwards/hero@2x.jpg")
     background-size: cover
 
     height: 500px
@@ -478,6 +486,8 @@ application-page.berdieView
       .content
         max-width: 500px
 
+        margin: 0 auto
+
         h1
           text-transform: uppercase
 
@@ -533,6 +543,11 @@ application-page.berdieView
       a:last-child
         margin-left: 15px
 
+.mobile application-page.berdieView
+  section.video
+    background: url("images/portfolio-items/berdie/poster.png")
+    background-size: cover
+  
 @media screen and (max-width: 1000px)
 
   section.hero .branding
@@ -552,3 +567,28 @@ application-page.berdieView
 
   section.portfolio ul li .container .image
     width: 80%
+
+  application-page.striveforwardsView section.portfolio-hero
+    text-align: center
+
+  application-page.striveforwardsView section.divider
+    display: none
+
+  application-page.striveforwardsView section.about .content
+    padding-top: 25px
+
+    overflow: hidden
+
+  application-page.striveforwardsView section.about img
+    width: 90%
+
+  application-page.striveforwardsView section.about .content .container
+    width: 80%
+
+    margin: 0 auto
+
+  application-page.berdieView section.video .container .content
+    max-width: 80%
+
+  application-page.berdieView section.about .container
+    max-width: 80%

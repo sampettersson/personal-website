@@ -44,7 +44,8 @@
     "angular-route": "./dist/client/vendor/components/angular-route/angular-route.js",
     "document-register-element": "./dist/client/vendor/components/document-register-element/document-register-element.js",
     "skrollr": "./dist/client/vendor/components/skrollr/skrollr.js",
-    "angular-skrollr": "./dist/client/vendor/components/angular-skrollr/angular-skrollr.js"
+    "angular-skrollr": "./dist/client/vendor/components/angular-skrollr/angular-skrollr.js",
+    "ng-device-detector": "./dist/client/vendor/components/ng-device-detector/ng-device-detector.js"
   },
   "browserify-shim": {
     "skrollr": {

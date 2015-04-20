@@ -1,9 +1,15 @@
-<html ng-app="sampettersson.com" ng-controller="applicationController">
+<html ng-app="sampettersson.com" ng-controller="applicationController" ng-class="{
+    'mobile': device.mobile,
+    'desktop': device.desktop,
+    'ios': device.ios,
+    'android': device.android
+    }">
 	<head>
 
 		<title>Sam Pettersson</title>
 		<meta charset="utf-8" />
 
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <base href="/">
 		<link rel="stylesheet" href="/client/assets/app.css" />
 
