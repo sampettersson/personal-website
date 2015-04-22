@@ -6,7 +6,9 @@ module.exports = class applicationController
 
       sendgrid = require("sendgrid")(process.env.SENDGRID_USER, process.env.SENDGRID_PASS)
 
-      res.json { err: true } if req.body.email is undefined or req.body.message is undefined
+      if req.body.email is undefined or req.body.message is undefined
+        res.json { err: true }
+        return
 
       sendgrid.send {
         to: "sam@sampettersson.com",
