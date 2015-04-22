@@ -248,7 +248,7 @@ section.portfolio
           h1
             font-family: geometriabold, sans-serif
             text-transform: uppercase
-            font-size: 3em
+            font-size: 2.8em
 
           p
             padding-top: 10px
@@ -322,6 +322,7 @@ section.me
         color: #ffffff
 
         max-width: 600px
+        width: 80%
 
         margin: 0 auto
 
@@ -330,7 +331,7 @@ section.me
       ul
         display: block
 
-        width: 100%
+        width: 80%
 
         max-width: 600px
 
@@ -748,20 +749,46 @@ application-page.berdieView
   section.hero .branding
     display: none
 
-  section.hero .intro
-    flex: 1
-
   section.hero .intro p
     font-size: 2.5em
+
+  section.hero .image-container
+    display: none
+
+  section.hero .intro-container
+    flex: 1
 
   section.portfolio ul li .container
     flex-direction: column
 
   section.portfolio ul li .container .meta
-    width: 100%
+    width: 95%
+    transform: translateX(0%)
 
-  section.portfolio ul li .container .image
-    width: 80%
+  section.portfolio ul li .container .meta h1
+    font-size: 2.5em
+
+  section.me .container .image-container
+    display: none
+
+  section.me .container .text-container
+    flex: 0 0 90%
+
+    margin: 0 auto
+
+  section.me .container .content-placeholder
+    display: none
+
+  section.me .container .text-container ul li
+    position: static
+
+  section.me .container .text-container ul li contact-popup .popup
+    margin-left: 0px !important
+
+    width: 100%
+    left: 0%
+
+    position: absolute
 
   application-page.striveforwardsView section.portfolio-hero
     text-align: center

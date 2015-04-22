@@ -9,7 +9,7 @@ App.controller 'applicationController', ($scope, $rootScope, deviceDetector) ->
   $rootScope.device.ios = deviceDetector.raw.os.ios
   $rootScope.device.android = deviceDetector.raw.os.android
 
-App.directive 'contactPopup', ($timeout, $http) ->
+App.directive 'contactPopup', ($timeout, $http, $window) ->
   directive = {}
 
   directive.restrict = "E"
@@ -32,6 +32,9 @@ App.directive 'contactPopup', ($timeout, $http) ->
         $timeout () ->
           $scope.contactPopup.marginTop = -Math.abs($element[0].children[1].offsetHeight + 15)
           $scope.contactPopup.marginLeft = -Math.abs(($element[0].children[1].offsetWidth - $element[0].children[2].offsetWidth) / 2)
+
+          console.log $element[0].children[2]
+
           $scope.animateContactPopup = true
         , 50
 
