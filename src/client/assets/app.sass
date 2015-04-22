@@ -183,8 +183,6 @@ section.hero
 section.portfolio
   flex: 1
 
-  min-height: 100%
-
   ul
     list-style-type: none
 
@@ -196,7 +194,6 @@ section.portfolio
       padding-top: 25px
       padding-bottom: 25px
 
-      min-height: 100%
       width: 100%
 
       // Handle colors for different portfolio
@@ -221,20 +218,9 @@ section.portfolio
         background-position: center
 
       &.berdie
-        position: relative
-
-        overflow: hidden
-
-        video
-          position: absolute
-
-          left: 0
-          top: 0
-
-          min-width: 100%
-          min-height: 100%
-          width: auto
-          height: auto
+        background: url("images/portfolio-items/berdie/poster.png")
+        background-size: cover
+        background-position: center
 
       .container
         display: flex
