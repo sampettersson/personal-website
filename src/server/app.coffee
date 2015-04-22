@@ -5,8 +5,12 @@ module.Module._initPaths()
 
 express = require "express"
 exphbs  = require "express-handlebars"
+bodyParser = require "body-parser"
 
 app = express()
+
+app.use bodyParser.urlencoded extended: false
+app.use bodyParser.json()
 
 app.use "/client", express.static __dirname.concat("/../client")
 

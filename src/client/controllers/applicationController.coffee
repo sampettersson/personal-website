@@ -9,7 +9,7 @@ App.controller 'applicationController', ($scope, $rootScope, deviceDetector) ->
   $rootScope.device.ios = deviceDetector.raw.os.ios
   $rootScope.device.android = deviceDetector.raw.os.android
 
-App.directive 'contactPopup', ($timeout) ->
+App.directive 'contactPopup', ($timeout, $http) ->
   directive = {}
 
   directive.restrict = "E"
@@ -17,6 +17,12 @@ App.directive 'contactPopup', ($timeout) ->
   directive.link = ($scope, $element) ->
 
     $scope.contactPopup = {}
+
+    $scope.contactPopup.send = () ->
+
+      $http.post('/email', { email: $scope.contactPopup.email, message: $scope.contactPopup.message }).success (data) ->
+        if !data.err
+          $scope.contactPopup.success = true
 
     $scope.contact = () ->
 

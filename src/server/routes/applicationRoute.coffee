@@ -4,4 +4,5 @@ module.exports = class applicationRoute
 
     controllers = require "controllers"
 
+    router.post '/email', controllers.applicationController.routes.emailRoute
     router.get '*', controllers.applicationController.routes.applicationRoute

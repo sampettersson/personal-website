@@ -1,10 +1,14 @@
 <div class="popup-click" ng-click="contact()" ng-class="{'show': showContactPopup}"></div>
 <div class="popup" ng-class="{'show': showContactPopup, 'animate': animateContactPopup, 'animate-out': contactPopup.animateOut}" ng-style="{'margin-top': contactPopup.marginTop, 'margin-left': contactPopup.marginLeft}">
 
-    <input type="text" placeholder="Email" />
-    <textarea placeholder="Message"></textarea>
+    <p>sam@sampettersson.com or use the form below:</p>
 
-    <a href="#" ng-click="contactSend()">SEND <i class="fa fa-envelope"></i></a>
+    <input type="text" placeholder="Email" ng-model="contactPopup.email" />
+    <textarea placeholder="Message" ng-model="contactPopup.message"></textarea>
+
+    <p ng-class="{'success': contactPopup.success}" class="success-message">Thanks! Email sent!</p>
+
+    <a href="#" ng-click="contactPopup.send()" ng-class="{'success': contactPopup.success}">SEND <i class="fa fa-envelope"></i></a>
 
 </div>
 <a href="#" ng-click="contact()">Email</a>
