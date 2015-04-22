@@ -98,73 +98,87 @@ application-page.notFoundView
 
       padding-bottom: 25px
 
-section.hero-container
-  background: #586154 url("images/bg.jpg")
-  background-size: cover
-  background-position: bottom center
-
 section.hero
   display: flex
   align-items: center
 
-  margin: 0 auto
-
-  width: 80%
+  width: 100%
   height: 100%
 
   min-height: 500px
 
-  .branding
-    display: flex
-    justify-content: center
-    flex: 0 0 25%
+  position: relative
 
+  .image-container
     height: 100%
+    flex: 0 0 50%
 
-    img
+    position: relative
+
+    overflow: hidden
+
+    .image
+      position: absolute
+
       width: 100%
-      max-width: 100px
+      height: 100%
 
-  .intro
-    flex: 0 0 75%
+      left: 0%
+      top: 0%
 
-    max-width: 600px
-
-    h2, h3, p
-      font-family: ostrich_sans_roundedmedium, sans-serif
-
-      background: linear-gradient(130deg, #8CBEB0, #B8D27A)
+      background: #586154 url("images/bg.jpg")
       background-size: cover
+      background-position: bottom center
 
-      -webkit-background-clip: text
-      -webkit-text-fill-color: transparent
+      animation: scaleAnimation 40s
+      animation-iteration-count: infinite
 
-    h2
-      padding-top: 5px
+      @keyframes scaleAnimation
+        0%
+          transform: scale(1)
+        50%
+          transform: scale(1.05)
+        100%
+          transform: scale(1)
 
-      font-size: 8em
-      letter-spacing: 5px
+  .intro-container
+    flex: 0 0 50%
 
-    h3
-      padding-top: 5px
-      padding-bottom: 15px
+    .intro
+      width: 80%
 
-      font-size: 6.6em
+      margin: 0 auto
 
-    .wave
-      display: block
+      h2, h3, p
+        font-family: ostrich_sans_roundedmedium, sans-serif
+        color: #FFFEFC
 
-      width: 100%
-      height: 2px
+      h2
+        padding-top: 5px
 
-      background: linear-gradient(130deg, #8CBEB0, #B8D27A)
+        font-size: 8em
+        letter-spacing: 5px
 
-    p
-      padding-top: 15px
-      padding-bottom: 15px
+      h3
+        padding-top: 5px
+        padding-bottom: 15px
 
-      font-size: 3em
-      line-height: 105%
+        font-size: 6.6em
+
+      .wave
+        display: block
+
+        width: 100%
+        height: 2px
+
+        background: #FFFEFC
+
+      p
+        padding-top: 15px
+        padding-bottom: 15px
+
+        font-size: 3em
+        line-height: 105%
 
 section.portfolio
   flex: 1
@@ -193,25 +207,34 @@ section.portfolio
 
           .container
             .meta
-              a
-                &:hover
-                  color: $color
+              color: $color
 
-      @include portfolioColors(berdie, $berdieColor)
+              a
+                color: $color
+
+      @include portfolioColors(berdie, darken($berdieColor, 10))
       @include portfolioColors(striveforwards, $striveforwardsColor)
 
-      // Striveforwards specific styling.
       &.striveforwards
-        .container
-          flex-direction: column
+        background: url("images/portfolio-items/strive-forwards/hero@2x.jpg")
+        background-size: cover
+        background-position: center
 
-          .image
-            flex: 1
+      &.berdie
+        position: relative
 
-            width: 100%
-            max-width: 800px
+        overflow: hidden
 
-            padding-top: 30px
+        video
+          position: absolute
+
+          left: 0
+          top: 0
+
+          min-width: 100%
+          min-height: 100%
+          width: auto
+          height: auto
 
       .container
         display: flex
@@ -219,40 +242,34 @@ section.portfolio
         align-items: center
         justify-content: center
 
-        .image
-          width: 25%
-
-          img
-            width: 100%
+        position: relative
 
         .meta
-          width: 33%
+          flex: 0 0 33%
+
+          background: #ffffff
+
+          padding: 25px
 
           margin: 30px
+
+          border-radius: 5px
 
           h1
             font-family: geometriabold, sans-serif
             text-transform: uppercase
             font-size: 3em
 
-            color: #ffffff
-
           p
             padding-top: 10px
             padding-bottom: 20px
 
-            font-size: 1.8em
-
-            color: #ffffff
+            font-size: 1.3em
 
           a
             display: inline-block
 
             background: 0
-            color: #ffffff
-
-            padding: 15px
-            padding-top: 18px
 
             border: 1px solid #ffffff
             border-radius: 5px
@@ -263,65 +280,219 @@ section.portfolio
             font-family: geometrialight, sans-serif
             font-size: 1em
 
-            transition: all 200ms
-
             text-decoration: none
 
-            &:hover
-              background: #ffffff
-              color: #333333
-
 section.me
+  padding-top: 45px
+  padding-bottom: 35px
 
   .container
     display: flex
     align-items: center
     justify-content: center
-    flex-direction: column
-
-    padding-top: 35px
-    padding-bottom: 35px
 
     max-width: 80%
 
     margin: 0 auto
 
-    img
-      width: 240px
+    .image-container
+      flex: 0 0 33%
+      text-align: center
 
-      border-radius: 50%
+      img
+        width: 50%
+        margin: 0 auto
+        border-radius: 50%
 
-    p
-      padding-top: 25px
-      padding-bottom: 25px
+    .text-container
+      flex: 0 0 67%
 
-      font-size: 1.8em
+      p
+        text-align: left
 
-      color: #ffffff
+        font-size: 1.5em
 
-      max-width: 600px
+        color: #ffffff
 
-    h1
-      color: #ffffff
+        max-width: 600px
 
-      padding-bottom: 25px
+        margin: 0 auto
 
-    ul
-      list-style-type: none
+        padding-bottom: 25px
 
-      li
-        display: inline-block
+      ul
+        display: block
 
-        font-family: geometriabold, sans-serif
+        width: 100%
 
-        padding: 10px
+        max-width: 600px
 
-        a
-          color: #ffffff
+        margin: 0 auto
 
-          text-decoration: none
+        list-style-type: none
 
-          border-bottom: 1px solid #ffffff
+        li
+          display: inline-block
+
+          font-family: geometriabold, sans-serif
+
+          padding: 10px
+
+          position: relative
+
+          &:first-child
+            padding-left: 0px
+
+          a
+            color: #ffffff
+
+            text-decoration: none
+
+            border-bottom: 1px solid #ffffff
+
+          contact-popup
+            display: block
+
+            .popup-click
+              display: none
+
+              position: fixed
+
+              width: 100%
+              height: 100%
+
+              left: 0
+              top: 0
+
+              cursor: pointer
+
+              &.show
+                display: block
+
+            .popup
+              position: absolute
+
+              display: none
+
+              opacity: 0
+
+              background: #ffffff
+
+              border-radius: 5px
+
+              padding: 15px
+
+              &:after, &:before
+                top: 100%
+                left: 50%
+                border: solid transparent
+                content: " "
+                height: 0
+                width: 0
+                position: absolute
+                pointer-events: none
+
+              &:after
+                border-color: rgba(0, 0, 0, 0)
+                border-top-color: #ffffff
+                border-width: 7px
+                margin-left: -7px
+
+              &:before
+                border-color: rgba(0, 0, 0, 0)
+                border-top-color: #ffffff
+                border-width: 13px
+                margin-left: -13px
+
+              input
+                font-family: 'geometriabold', sans-serif
+
+                border: 2px solid #B0CE84
+                padding: 8px
+
+                outline: 0
+
+                font-size: 0.9em
+
+                border-radius: 5px
+
+                color: #B0CE84
+
+                &::placeholder
+                  color: #B0CE84
+
+              textarea
+                font-family: 'geometriabold', sans-serif
+
+                width: 100%
+
+                margin-top: 10px
+
+                border: 2px solid #B0CE84
+
+                font-size: 0.9em
+
+                outline: 0
+
+                border-radius: 5px
+
+                padding: 8px
+
+                height: 100px
+
+                resize: none
+
+                color: #B0CE84
+
+                &::placeholder
+                  color: #B0CE84
+
+              a
+                display: inline-block
+
+                color: #B0CE84
+
+                padding: 8px
+
+                margin-top: 10px
+
+                font-size: 0.9em
+
+                border: 2px solid #B0CE84
+                border-radius: 5px
+
+                transition: background 250ms
+
+                &:hover
+                  background: #B0CE84
+                  color: #ffffff
+
+              &.show
+                display: block
+
+              &.animate
+                animation: popIn 250ms
+                animation-fill-mode: forwards
+
+                @keyframes popIn
+                  0%
+                    transform: scale(0)
+                    opacity: 0
+                  100%
+                    transform: scale(1)
+                    opacity: 1
+
+              &.animate-out
+                animation: popOut 250ms
+                animation-fill-mode: forwards
+
+                @keyframes popOut
+                  0%
+                    transform: scale(1)
+                    opacity: 1
+                  100%
+                    transform: scale(0)
+                    opacity: 0
 
 application-page.portfolioView
   section.portfolio-hero
