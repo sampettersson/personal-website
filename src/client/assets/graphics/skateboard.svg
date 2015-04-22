@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="25px" height="89px" viewBox="0 0 25 89" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="100%" y2="79.475543%" id="linearGradient-1">
+            <stop stop-color="#8CBEB0" offset="0%"></stop>
+            <stop stop-color="#B8D27A" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="106.377041%" id="linearGradient-2">
+            <stop stop-color="#8CBEB0" offset="0%"></stop>
+            <stop stop-color="#B8D27A" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Skateboard" sketch:type="MSLayerGroup" transform="translate(1.000000, 1.000000)">
+            <path d="M1.99553537,9.58175062 C0.867780553,9.56381126 -0.0500875566,10.4707294 -0.0544939701,11.5855348 L-0.0736718669,16.4374678 C-0.0781169902,17.5620666 0.821186928,18.4855364 1.91063439,18.499777 L3.99021249,9.61348025 L1.99553537,9.58175062 Z M19.3678316,9.56755323 L21.2445841,9.56755323 C22.2810858,9.56755323 23.1213366,10.4070109 23.1213366,11.4523219 L23.1213366,16.7791301 C23.1213366,17.8200591 22.2722097,18.6624705 21.3395906,18.6609017 L19.3678316,9.56755323 Z M2.80945446,65.4932407 L1.75423955,65.4932407 C0.74769968,65.4932407 -0.0682621086,66.3110427 -0.0682621086,67.3155465 L-0.0682621086,72.363783 C-0.0682621086,73.3702148 0.741278541,74.1860889 1.75558292,74.1860889 L3.57942795,74.1860889 L2.80945446,65.4932407 Z M20.8237055,65.2788579 L21.6744763,65.2788579 C22.5480417,65.2788579 23.2562064,65.9873161 23.2562064,66.8592438 L23.2562064,72.5383101 C23.2562064,73.4111331 22.5566026,74.118696 21.6800424,74.118696 L20.1038784,74.118696 L20.8237055,65.2788579 Z M12.0495487,87.4950358 C2.88938294,87.4950358 5.39353474,82.2435917 4.36956368,77.3241373 C2.13697158,66.5981165 0.813358871,38.845768 0.813358871,38.845768 C0.813358871,38.845768 0.342678205,0.183634403 11.5099167,0.183634403 C22.6771551,0.183634403 22.6771558,39.4489779 22.6771558,39.4489779 C22.6771558,39.4489779 20.3143024,73.7110235 19.3387829,77.3241373 C18.8106822,79.2801083 21.2097145,87.4950358 12.0495487,87.4950358 Z" id="Path-4" stroke="url(#linearGradient-1)" sketch:type="MSShapeGroup"></path>
+            <g id="Screws" transform="translate(8.000000, 11.000000)" sketch:type="MSShapeGroup">
+                <circle id="Path" stroke="#B8D27A" cx="0.5" cy="53.5" r="0.5"></circle>
+                <circle id="Path" stroke="#B8D27A" cx="6.5" cy="62.5" r="0.5"></circle>
+                <circle id="Path" stroke="#B8D27A" cx="6.5" cy="53.5" r="0.5"></circle>
+                <circle id="Path" stroke="#B8D27A" cx="0.5" cy="62.5" r="0.5"></circle>
+                <circle id="Oval-2" stroke="#8CBEB0" fill="#D8D8D8" cx="0.5" cy="9.5" r="0.5"></circle>
+                <circle id="Oval-3" stroke="#8CBEB0" fill="#D8D8D8" cx="6.5" cy="9.5" r="0.5"></circle>
+                <circle id="Oval-4" stroke="#8CBEB0" fill="#D8D8D8" cx="6.5" cy="0.5" r="0.5"></circle>
+                <circle id="Oval-5" stroke="#8CBEB0" fill="#D8D8D8" cx="0.5" cy="0.5" r="0.5"></circle>
+            </g>
+            <circle id="Branding" stroke="url(#linearGradient-2)" sketch:type="MSShapeGroup" cx="11.5" cy="42.5" r="4.5"></circle>
+        </g>
+    </g>
+</svg>

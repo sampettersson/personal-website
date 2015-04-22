@@ -1,0 +1,594 @@
+@import 'fonts/stylesheet'
+@import "fonts/font-awesome/font-awesome"
+@import "animate-css/animate"
+
+$striveforwardsColor: #A8254D
+$berdieColor: #1AD6FD
+
+*
+  margin: 0
+  padding: 0
+
+  -webkit-font-smoothing: antialiased
+  text-rendering: geometricPrecision
+
+  box-sizing: border-box
+
+body
+  font-family: geometriabold, sans-serif
+
+  height: 100%
+
+body.mobile
+  min-height: 100%
+
+  -webkit-text-size-adjust: 100%
+
+@mixin applicationPageHeader($color)
+  header
+    position: fixed
+
+    top: 0
+    left: 0
+
+    width: 100%
+
+    padding: 25px
+    padding-top: 10px
+    padding-bottom: 10px
+
+    background: #ffffff
+
+    font-size: 1.3em
+
+    z-index: 4
+
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.2)
+
+    a
+      display: inline-block
+
+      padding: 15px
+
+      border: 2px solid $color
+      border-radius: 5px
+
+      color: $color
+
+      text-decoration: none
+
+      transition: all 250ms
+
+      &:hover
+        background: $color
+
+        color: lighten($color, 100)
+
+application-page
+  display: block
+
+  background: linear-gradient(130deg, #8CBEB0, #B8D27A)
+
+  animation: fadeIn 250ms
+  animation-fill-mode: forwards
+
+  @keyframes fadeIn
+    0%
+      opacity: 0
+    100%
+      opacity: 1
+
+  @include applicationPageHeader(#8CBEB0)
+
+application-page.notFoundView
+  .body
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+
+    height: 100%
+
+    color: #ffffff
+
+    h1
+      text-transform: uppercase
+
+      font-size: 2.5em
+
+      padding-bottom: 25px
+
+section.hero-container
+  background: #586154 url("images/bg.jpg")
+  background-size: cover
+  background-position: bottom center
+
+section.hero
+  display: flex
+  align-items: center
+
+  margin: 0 auto
+
+  width: 80%
+  height: 100%
+
+  min-height: 500px
+
+  .branding
+    display: flex
+    justify-content: center
+    flex: 0 0 25%
+
+    height: 100%
+
+    img
+      width: 100%
+      max-width: 100px
+
+  .intro
+    flex: 0 0 75%
+
+    max-width: 600px
+
+    h2, h3, p
+      font-family: ostrich_sans_roundedmedium, sans-serif
+
+      background: linear-gradient(130deg, #8CBEB0, #B8D27A)
+      background-size: cover
+
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+
+    h2
+      padding-top: 5px
+
+      font-size: 8em
+      letter-spacing: 5px
+
+    h3
+      padding-top: 5px
+      padding-bottom: 15px
+
+      font-size: 6.6em
+
+    .wave
+      display: block
+
+      width: 100%
+      height: 2px
+
+      background: linear-gradient(130deg, #8CBEB0, #B8D27A)
+
+    p
+      padding-top: 15px
+      padding-bottom: 15px
+
+      font-size: 3em
+      line-height: 105%
+
+section.portfolio
+  flex: 1
+
+  min-height: 100%
+
+  ul
+    list-style-type: none
+
+    li
+      display: flex
+      justify-content: center
+      align-items: center
+
+      padding-top: 25px
+      padding-bottom: 25px
+
+      min-height: 100%
+      width: 100%
+
+      // Handle colors for different portfolio
+      // items.
+      @mixin portfolioColors($class, $color)
+        &.#{$class}
+          background: $color
+
+          .container
+            .meta
+              a
+                &:hover
+                  color: $color
+
+      @include portfolioColors(berdie, $berdieColor)
+      @include portfolioColors(striveforwards, $striveforwardsColor)
+
+      // Striveforwards specific styling.
+      &.striveforwards
+        .container
+          flex-direction: column
+
+          .image
+            flex: 1
+
+            width: 100%
+            max-width: 800px
+
+            padding-top: 30px
+
+      .container
+        display: flex
+        flex: 0 0 80%
+        align-items: center
+        justify-content: center
+
+        .image
+          width: 25%
+
+          img
+            width: 100%
+
+        .meta
+          width: 33%
+
+          margin: 30px
+
+          h1
+            font-family: geometriabold, sans-serif
+            text-transform: uppercase
+            font-size: 3em
+
+            color: #ffffff
+
+          p
+            padding-top: 10px
+            padding-bottom: 20px
+
+            font-size: 1.8em
+
+            color: #ffffff
+
+          a
+            display: inline-block
+
+            background: 0
+            color: #ffffff
+
+            padding: 15px
+            padding-top: 18px
+
+            border: 1px solid #ffffff
+            border-radius: 5px
+
+            outline: 0
+
+            text-transform: uppercase
+            font-family: geometrialight, sans-serif
+            font-size: 1em
+
+            transition: all 200ms
+
+            text-decoration: none
+
+            &:hover
+              background: #ffffff
+              color: #333333
+
+section.me
+
+  .container
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+
+    padding-top: 35px
+    padding-bottom: 35px
+
+    max-width: 80%
+
+    margin: 0 auto
+
+    img
+      width: 240px
+
+      border-radius: 50%
+
+    p
+      padding-top: 25px
+      padding-bottom: 25px
+
+      font-size: 1.8em
+
+      color: #ffffff
+
+      max-width: 600px
+
+    h1
+      color: #ffffff
+
+      padding-bottom: 25px
+
+    ul
+      list-style-type: none
+
+      li
+        display: inline-block
+
+        font-family: geometriabold, sans-serif
+
+        padding: 10px
+
+        a
+          color: #ffffff
+
+          text-decoration: none
+
+          border-bottom: 1px solid #ffffff
+
+application-page.portfolioView
+  section.portfolio-hero
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+    color: #ffffff
+
+    height: 600px
+
+    h1
+      font-size: 3em
+
+      padding-bottom: 25px
+
+      text-transform: uppercase
+
+    p
+      font-size: 2em
+
+      max-width: 400px
+
+      text-align: center
+
+    p.arrow
+      padding-top: 50px
+      font-size: 2.4em
+
+  section.contact
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+    color: #ffffff
+
+    min-height: 300px
+    max-width: 80%
+
+    margin: 0 auto
+
+    padding-top: 25px
+    padding-bottom: 25px
+
+    .container
+      max-width: 600px
+
+      h1
+        font-size: 2.4em
+        text-transform: uppercase
+
+      p
+        font-size: 1.4em
+
+        a
+          color: #ffffff
+
+          border-bottom: 2px solid #ffffff
+
+          text-decoration: none
+
+application-page.striveforwardsView
+  @include applicationPageHeader($striveforwardsColor)
+
+  section.portfolio-hero
+    background: $striveforwardsColor
+    
+  section.divider
+    background: url("images/portfolio-items/strive-forwards/hero@2x.jpg")
+    background-size: cover
+
+    height: 500px
+
+    width: 100%
+
+    position: absolute
+
+  section.about
+    background: #ffffff
+
+    color: $striveforwardsColor
+
+    padding-bottom: 25px
+
+    .content
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+
+      position: relative
+
+      padding-top: 150px
+      padding-bottom: 50px
+
+      z-index: 2
+
+    img
+      width: 70%
+
+      padding-bottom: 25px
+
+    h1
+      font-size: 2em
+
+      text-transform: uppercase
+
+    p
+      padding-top: 25px
+      padding-bottom: 25px
+
+      font-size: 1.5em
+
+      max-width: 600px
+
+    a
+      display: inline-block
+
+      font-size: 1.2em
+
+      color: $striveforwardsColor
+
+      text-decoration: none
+
+      border-bottom: 2px solid $striveforwardsColor
+
+    a:last-child
+      margin-left: 10px
+
+application-page.berdieView
+  @include applicationPageHeader(darken($berdieColor, 10))
+
+  section.portfolio-hero
+    background: $berdieColor
+
+  section.video
+    position: relative
+
+    height: 400px
+
+    overflow: hidden
+
+    .container
+      position: absolute
+
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+
+      color: #ffffff
+
+      width: 100%
+      height: 100%
+
+      background: rgba(0,0,0,0.3)
+
+      z-index: 3
+
+      .content
+        max-width: 500px
+
+        margin: 0 auto
+
+        h1
+          text-transform: uppercase
+
+          font-size: 2.5em
+
+        p
+          padding-top: 25px
+
+          font-size: 1.5em
+
+    video
+      position: absolute
+
+      min-width: 100%
+      min-height: 100%
+      width: auto
+      height: auto
+
+  section.about
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+    background: #ffffff
+
+    color: darken($berdieColor, 10)
+
+    .container
+      max-width: 600px
+
+      padding-top: 50px
+      padding-bottom: 50px
+
+      p
+        font-size: 1.5em
+
+        padding-bottom: 25px
+
+      a
+        display: inline-block
+
+        color: darken($berdieColor, 10)
+
+        text-decoration: none
+
+        font-size: 1.2em
+
+        border-bottom: 2px solid darken($berdieColor, 10)
+
+        text-transform: uppercase
+
+      a:last-child
+        margin-left: 15px
+
+.mobile application-page.berdieView
+  section.video
+    background: url("images/portfolio-items/berdie/poster.png")
+    background-size: cover
+  
+@media screen and (max-width: 1000px)
+
+  section.hero .branding
+    display: none
+
+  section.hero .intro
+    flex: 1
+
+  section.hero .intro p
+    font-size: 2.5em
+
+  section.portfolio ul li .container
+    flex-direction: column
+
+  section.portfolio ul li .container .meta
+    width: 100%
+
+  section.portfolio ul li .container .image
+    width: 80%
+
+  application-page.striveforwardsView section.portfolio-hero
+    text-align: center
+
+  application-page.striveforwardsView section.divider
+    display: none
+
+  application-page.striveforwardsView section.about .content
+    padding-top: 25px
+
+    overflow: hidden
+
+  application-page.striveforwardsView section.about img
+    width: 90%
+
+  application-page.striveforwardsView section.about .content .container
+    width: 80%
+
+    margin: 0 auto
+
+  application-page.berdieView section.video .container .content
+    max-width: 80%
+
+  application-page.berdieView section.about .container
+    max-width: 80%
