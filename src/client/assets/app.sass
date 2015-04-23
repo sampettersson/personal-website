@@ -189,9 +189,6 @@ section.portfolio
       justify-content: center
       align-items: center
 
-      padding-top: 25px
-      padding-bottom: 25px
-
       width: 100%
 
       // Handle colors for different portfolio
@@ -215,35 +212,37 @@ section.portfolio
         background-size: cover
         background-position: center
 
-        .meta
-          transform: translateX(-100%)
-
       &.berdie
         background: url("images/portfolio-items/berdie/poster.png")
         background-size: cover
         background-position: center
 
         .meta
-          transform: translateX(100%)
+          order: 2
 
       .container
         display: flex
-        flex: 0 0 80%
+        flex: 0 0 100%
         align-items: center
         justify-content: center
 
         position: relative
 
+        .placeholder
+          flex: 0 0 50%
+
         .meta
-          flex: 0 0 33%
+          flex: 0 0 50%
 
           background: #ffffff
 
           padding: 25px
+          padding-top: 80px
+          padding-bottom: 80px
 
           margin: 30px
-
-          border-radius: 5px
+          margin-top: 0px
+          margin-bottom: 0px
 
           h1
             font-family: geometriabold, sans-serif
@@ -314,7 +313,7 @@ section.me
       padding-top: 45px
       padding-bottom: 35px
 
-      p
+      .body
         text-align: left
 
         font-size: 1.5em
@@ -758,11 +757,18 @@ application-page.berdieView
   section.hero .intro-container
     flex: 1
 
+  section.portfolio ul li
+    margin-top: 25px
+
+  section.portfolio ul li:first-child
+    margin-top: 0px
+
   section.portfolio ul li .container
     flex-direction: column
 
   section.portfolio ul li .container .meta
-    width: 95%
+    width: 80%
+
     transform: translateX(0%)
 
   section.portfolio ul li .container .meta h1
@@ -781,6 +787,10 @@ application-page.berdieView
 
   section.me .container .text-container ul li
     position: static
+
+    display: block
+
+    padding-left: 0px
 
   section.me .container .text-container ul li contact-popup .popup
     margin-left: 0px !important
