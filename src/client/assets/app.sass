@@ -39,7 +39,7 @@ body.mobile
 
     background: #ffffff
 
-    font-size: 1.3em
+    font-size: 1.2em
 
     z-index: 4
 
@@ -48,21 +48,15 @@ body.mobile
     a
       display: inline-block
 
-      padding: 15px
+      padding-bottom: 2px
 
-      border: 2px solid $color
-      border-radius: 5px
+      border-bottom: 2px solid $color
 
       color: $color
 
       text-decoration: none
 
       transition: all 250ms
-
-      &:hover
-        background: $color
-
-        color: lighten($color, 100)
 
 application-page
   display: block
@@ -204,6 +198,8 @@ section.portfolio
               a
                 color: $color
 
+                border-bottom-color: $color
+
       @include portfolioColors(berdie, darken($berdieColor, 10))
       @include portfolioColors(striveforwards, $striveforwardsColor)
 
@@ -258,18 +254,15 @@ section.portfolio
           a
             display: inline-block
 
-            background: 0
-
-            border: 1px solid #ffffff
-            border-radius: 5px
-
-            outline: 0
-
             text-transform: uppercase
-            font-family: geometrialight, sans-serif
+            font-family: 'geometriabold', sans-serif
             font-size: 1em
 
             text-decoration: none
+
+            padding-bottom: 2px
+
+            border-bottom: 2px solid #ffffff
 
 section.me
   .container
@@ -417,6 +410,8 @@ section.me
                 border: 2px solid #B0CE84
                 padding: 8px
 
+                width: 100%
+
                 outline: 0
 
                 font-size: 0.9em
@@ -424,6 +419,8 @@ section.me
                 border-radius: 5px
 
                 color: #B0CE84
+
+                -webkit-appearance: none
 
                 &::placeholder
                   color: #B0CE84
@@ -450,6 +447,8 @@ section.me
                 resize: none
 
                 color: #B0CE84
+
+                -webkit-appearance: none
 
                 &::placeholder
                   color: #B0CE84
@@ -758,13 +757,16 @@ application-page.berdieView
     flex: 1
 
   section.portfolio ul li
-    margin-top: 25px
+    margin-top: 50px
 
   section.portfolio ul li:first-child
     margin-top: 0px
 
   section.portfolio ul li .container
     flex-direction: column
+
+  section.portfolio ul li .container .placeholder
+    display: none
 
   section.portfolio ul li .container .meta
     width: 80%
@@ -792,13 +794,19 @@ application-page.berdieView
 
     padding-left: 0px
 
+    text-align: center
+
   section.me .container .text-container ul li contact-popup .popup
     margin-left: 0px !important
 
     width: 100%
     left: 0%
 
+    border-radius: 0px
+
     position: absolute
+
+    text-align: left
 
   application-page.striveforwardsView section.portfolio-hero
     text-align: center
