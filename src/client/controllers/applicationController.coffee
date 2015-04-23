@@ -9,6 +9,14 @@ App.controller 'applicationController', ($scope, $rootScope, deviceDetector) ->
   $rootScope.device.ios = deviceDetector.raw.os.ios
   $rootScope.device.android = deviceDetector.raw.os.android
 
+App.directive 'applicationRoot', () ->
+  directive = {}
+
+  directive.restrict = "E"
+  directive.templateUrl = "/client/views/applicationView.html"
+
+  return directive
+
 App.directive 'contactPopup', ($timeout, $http, $window) ->
   directive = {}
 
