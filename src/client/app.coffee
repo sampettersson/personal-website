@@ -7,8 +7,6 @@ document.registerElement "application-page"
 
 require "angular"
 require "angular-route"
-require "skrollr"
-require "angular-skrollr"
 require "ng-device-detector"
 
 App = angular.module 'sampettersson.com', ["ngRoute", "ng.deviceDetector"]

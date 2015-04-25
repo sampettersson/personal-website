@@ -26,7 +26,7 @@ App.directive 'contactPopup', ($timeout, $http, $window) ->
 
     $scope.contactPopup = {}
 
-    $scope.contactPopup.to = "sam@sampettersson.com"
+    $scope.contactPopup.to = "sam".concat("@").concat("sampettersson.com")
 
     $scope.contactPopup.send = () ->
       $http.post('/email', { email: $scope.contactPopup.email, message: $scope.contactPopup.message }).success (data) ->
