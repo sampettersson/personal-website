@@ -26,8 +26,9 @@ App.directive 'contactPopup', ($timeout, $http, $window) ->
 
     $scope.contactPopup = {}
 
-    $scope.contactPopup.send = () ->
+    $scope.contactPopup.to = "sam@sampettersson.com"
 
+    $scope.contactPopup.send = () ->
       $http.post('/email', { email: $scope.contactPopup.email, message: $scope.contactPopup.message }).success (data) ->
         if !data.err
           $scope.contactPopup.success = true
@@ -37,13 +38,17 @@ App.directive 'contactPopup', ($timeout, $http, $window) ->
       if !$scope.showContactPopup
         $scope.showContactPopup = true
 
+        $scope.contactPopup.marginTop = 123
+
         $timeout () ->
-          $scope.contactPopup.marginTop = -Math.abs($element[0].children[1].offsetHeight + 15)
-          $scope.contactPopup.marginLeft = -Math.abs(($element[0].children[1].offsetWidth - $element[0].children[2].offsetWidth) / 2)
 
-          console.log $element[0].children[2]
+          marginTop = -Math.abs($element[0].children[1].offsetHeight + 15)
+          marginLeft = -Math.abs(($element[0].children[1].offsetWidth - $element[0].children[2].offsetWidth) / 2)
 
+          $scope.contactPopup.marginTop = marginTop + "px"
+          $scope.contactPopup.marginLeft = marginLeft + "px"
           $scope.animateContactPopup = true
+
         , 50
 
       else

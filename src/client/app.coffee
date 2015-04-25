@@ -11,19 +11,7 @@ require "skrollr"
 require "angular-skrollr"
 require "ng-device-detector"
 
-App = angular.module 'sampettersson.com', ["ngRoute", "sn.skrollr", "ng.deviceDetector"]
-
-App.config (snSkrollrProvider) ->
-  snSkrollrProvider.config =
-    forceHeight: false
-    smoothScrolling: true
-
-App.run ["snSkrollr", "deviceDetector", (snSkrollr, deviceDetector) ->
-
-  if deviceDetector.isMobile() isnt true
-    snSkrollr.init()
-
-]
+App = angular.module 'sampettersson.com', ["ngRoute", "ng.deviceDetector"]
 
 App.run ['$route', angular.noop]
 

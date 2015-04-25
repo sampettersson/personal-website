@@ -1,9 +1,9 @@
 <div class="popup-click" ng-click="contact()" ng-class="{'show': showContactPopup}"></div>
 <div class="popup" ng-class="{'show': showContactPopup, 'animate': animateContactPopup, 'animate-out': contactPopup.animateOut}" ng-style="{'margin-top': contactPopup.marginTop, 'margin-left': contactPopup.marginLeft}">
 
-    <p>sam@sampettersson.com or use the form below:</p>
+    <p>{{ contactPopup.to }} or use the form below:</p>
 
-    <input type="text" placeholder="Email" ng-model="contactPopup.email" />
+    <input type="text" placeholder="Email" ng-model="contactPopup.email"/>
     <textarea placeholder="Message" ng-model="contactPopup.message"></textarea>
 
     <p ng-class="{'success': contactPopup.success}" class="success-message">Thanks! Email sent!</p>
