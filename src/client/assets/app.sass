@@ -4,6 +4,8 @@
 
 $striveforwardsColor: #A8254D
 $berdieColor: #1AD6FD
+$orebroConcertHallColor: #beab6a
+$swedishHeroesInSchoolColor: #2a4776
 
 *
   margin: 0
@@ -202,6 +204,21 @@ section.portfolio
 
       @include portfolioColors(berdie, darken($berdieColor, 10))
       @include portfolioColors(striveforwards, $striveforwardsColor)
+      @include portfolioColors(orebroconcerthall, $orebroConcertHallColor)
+      @include portfolioColors(swedishheroesinschool, $swedishHeroesInSchoolColor)
+
+      &.swedishheroesinschool
+        background: url("images/portfolio-items/swedish-heroes-in-school/hero.jpg")
+        background-size: cover
+        background-position: bottom
+
+      &.orebroconcerthall
+        background: url("images/portfolio-items/orebro-concert-hall/hero.jpg")
+        background-size: cover
+        background-position: center
+        
+        .meta
+          order: 2
 
       &.striveforwards
         background: url("images/portfolio-items/strive-forwards/hero@2x.jpg")
@@ -651,6 +668,143 @@ application-page.striveforwardsView
 
     a:last-child
       margin-left: 10px
+      
+application-page.swedishHeroesInSchoolView
+  @include applicationPageHeader($swedishHeroesInSchoolColor)
+
+  section.portfolio-hero
+    background: $swedishHeroesInSchoolColor
+    
+  section.divider
+    background: url("images/portfolio-items/swedish-heroes-in-school/hero.jpg")
+    background-size: cover
+    background-position: bottom
+
+    height: 500px
+
+    width: 100%
+
+    position: absolute
+
+  section.about
+    background: #ffffff
+
+    color: $swedishHeroesInSchoolColor
+
+    padding-bottom: 25px
+
+    .content
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+
+      position: relative
+
+      padding-top: 150px
+      padding-bottom: 50px
+
+      z-index: 2
+
+    img
+      width: 70%
+
+      padding-bottom: 25px
+
+    h1
+      font-size: 2em
+
+      text-transform: uppercase
+
+    p
+      padding-top: 25px
+      padding-bottom: 25px
+
+      font-size: 1.5em
+
+      max-width: 600px
+
+    a
+      display: inline-block
+
+      font-size: 1.2em
+
+      color: $swedishHeroesInSchoolColor
+
+      text-decoration: none
+
+      border-bottom: 2px solid $swedishHeroesInSchoolColor
+
+    a:last-child
+      margin-left: 10px
+
+application-page.orebroConcertHallView
+  @include applicationPageHeader($orebroConcertHallColor)
+
+  section.portfolio-hero
+    background: $orebroConcertHallColor
+    
+  section.divider
+    background: url("images/portfolio-items/orebro-concert-hall/hero.jpg")
+    background-size: cover
+
+    height: 500px
+
+    width: 100%
+
+    position: absolute
+
+  section.about
+    background: #ffffff
+
+    color: $orebroConcertHallColor
+
+    padding-bottom: 25px
+
+    .content
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+
+      position: relative
+
+      padding-top: 150px
+      padding-bottom: 50px
+
+      z-index: 2
+
+    img
+      width: 70%
+
+      padding-bottom: 25px
+
+    h1
+      font-size: 2em
+
+      text-transform: uppercase
+
+    p
+      padding-top: 25px
+      padding-bottom: 25px
+
+      font-size: 1.5em
+
+      max-width: 600px
+
+    a
+      display: inline-block
+
+      font-size: 1.2em
+
+      color: $orebroConcertHallColor
+
+      text-decoration: none
+
+      border-bottom: 2px solid $orebroConcertHallColor
+
+    a:last-child
+      margin-left: 10px
 
 application-page.berdieView
   @include applicationPageHeader(darken($berdieColor, 10))
@@ -828,6 +982,25 @@ application-page.berdieView
     width: 90%
 
   application-page.striveforwardsView section.about .content .container
+    width: 80%
+
+    margin: 0 auto
+    
+  application-page.orebroConcertHallView section.portfolio-hero
+    text-align: center
+
+  application-page.orebroConcertHallView section.divider
+    display: none
+
+  application-page.orebroConcertHallView section.about .content
+    padding-top: 25px
+
+    overflow: hidden
+
+  application-page.orebroConcertHallView section.about img
+    width: 90%
+
+  application-page.orebroConcertHallView section.about .content .container
     width: 80%
 
     margin: 0 auto

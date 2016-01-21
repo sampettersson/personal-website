@@ -17,6 +17,10 @@ App.config ($routeProvider, $locationProvider) ->
 
   $routeProvider.when '/',
     templateUrl: "/client/views/indexView.html"
+  .when '/projects/swedish-heroes-in-school',
+    templateUrl: "/client/views/swedish-heroes-in-schoolView.html"
+  .when '/projects/orebro-concert-hall',
+    templateUrl: "/client/views/orebro-concert-hallView.html"
   .when '/projects/strive-forwards',
     templateUrl: "/client/views/strive-forwardsView.html"
   .when '/projects/berdie',
